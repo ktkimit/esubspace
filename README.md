@@ -69,20 +69,20 @@ directory you specified with the installation prefix.
 
 You can find and use the installed enriched subspace iteration library by
 simply put the following in your CMake configuration
-```bash
+```cmake
 find_package(Esspace REQUIRED)
 ...
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Esspace::Esspace)
 ```
 
-When configure your project, don't forget to make the installed enriched
+When configuring your project, don't forget to make the installed enriched
 subspace iteration library discoverable by adding its CMake package directory
 to `CMAKE_PREFIX_PATH`.
 
-For example, please look at the CMake configuration of the example given in
-this repository. To build the example type the following at its directory
-(./example/frame2d/)
+Please look at the CMake configuration of the example
+([frame2d_ex](./example/frame2d/)) given in this repository. To build the
+example type the following at its directory
 ```bash
 cmake -B build -DCMAKE_PREFIX_PATH=/to/your/preferred/install/location/lib/cmake
 ```
