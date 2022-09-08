@@ -81,8 +81,12 @@ subspace iteration library discoverable by adding its CMake package directory
 to `CMAKE_PREFIX_PATH`.
 
 Please look at the CMake configuration of the example
-([frame2d_ex](./example/frame2d/)) given in this repository. To build the
+([frame2d_ex](/example/frame2d/)) given in this repository. To build the
 example type the following at its directory
 ```bash
 cmake -B build -DCMAKE_PREFIX_PATH=/to/your/preferred/install/location/lib/cmake
 ```
+
+## License
+
+The software is licensed under [the MIT License](/LICENSE).
