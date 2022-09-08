@@ -3,21 +3,25 @@
 ## Introduction
 
 The enriched subspace iteration method is to find the smallest $p$ eigenvalues
-($\lambda_i; i = 1, \ldots, p$) and the corresponding eigenvectors
-($\boldsymbol{\phi}_i; i = 1, \ldots, p$) that satisfy
+$(\lambda_i; i = 1, \ldots, p)$ and the corresponding eigenvectors
+$(\boldsymbol{\phi}_i; i = 1, \ldots, p)$ that satisfy
+
 $$
 \mathbf{K} \boldsymbol{\phi}_i = \lambda_i \mathbf{M} \boldsymbol{\phi}_i; 
 \quad i = 1, \ldots, p
 $$
+
 and
+
 $$
 \begin{align*}
 \boldsymbol{\phi}_i^T \mathbf{M} \boldsymbol{\phi}_j &= \delta_{ij}, \\
 \boldsymbol{\phi}_i^T \mathbf{K} \boldsymbol{\phi}_j &= \lambda_i \delta_{ij}
 \end{align*}
 $$
-where $\mathbf{K} \in \mathbb{R}^{n \times n}$ and $\mathbf{M} \in
-\mathbb{R}^{n \times n}$ are real symmetric sparse matrices (usually obtained
+
+where $\mathbf{K} \in \mathbb{R}^{n \times n}$ and $\mathbf{M} \in \mathbb{R}^{n \times n}$ 
+are real symmetric sparse matrices (usually obtained
 after discretization like finite elements), and $\delta_{ij}$ is the Kronecker
 delta.
 
