@@ -25,7 +25,8 @@ are real symmetric sparse matrices (usually obtained
 after discretization like finite elements), and $\delta_{ij}$ is the Kronecker
 delta.
 
-<!-- For a detailed description of the enriched subspace iteration method, see [^1]. -->
+Please see [Kim and Bathe 2017](#KimBathe2017) and [Bathe 2014](#Bathe2014) for a
+detailed description of the enriched subsplace iteration method.
 
 <!-- The generalized eigenvalue problem defined above arises in many application areas. -->
 
@@ -60,7 +61,7 @@ cmake --install build
 Then the library will be installed into the location you specified with
 `DCMAKE_INSTALL_PREFIX` option in the configuration step.
 
-## How to use the library in your project?
+## Usage of the library
 
 The library exports CMake package files to easily find and use it in other
 projects.
@@ -81,11 +82,47 @@ subspace iteration library discoverable by adding its CMake package directory
 to `CMAKE_PREFIX_PATH`.
 
 Please look at the CMake configuration of the example
-([frame2d_ex](/example/frame2d/)) given in this repository. To build the
-example type the following at its directory
+([CMakeLists](example/frame2d/CMakeLists.txt)) given in this repository. 
+
+#### Example
+
+An example use of the library is given in
+[example_frame2d](example/frame2d/).
+The example problem is a plane frame structure given below: all the frame
+members have the same material properties as described in the figure ($E$:
+Young's modulus, $A$: sectional area, $I$: second moment of area, and $\rho$: mass
+density).
+
+<p align="center">
+  <img src="example/frame2d/frame2d_figure.png" width=50%>
+</p>
+
+We provide a driving source code
+[`esspace_main.f90`](example/frame2d/esspace_main.f90) with some input data
+files. The binary files `frame2d.stiff` and `frame2d.mass` are the
+corresponding stiffness matrix data and mass matrix data, respectively, and the
+formatted file `frame2d.in` provides required input arguments. In each binary
+file, the matrix data is stored sequentially as follows: the order of the matrix in
+single precision, the number of elements below skyline of the matrix in single
+precision, array storing the addresses of diagonal elements of the matrix in
+single precision, and array storing the elements of the matrix in compacted
+form in double precision.
+
+To build the example type the following at its directory
 ```bash
 cmake -B build -DCMAKE_PREFIX_PATH=/to/your/preferred/install/location/lib/cmake
 ```
+Then you will get an executable file named `Example_frame2d`. After running it
+the results will be stored in a text file `frame2d.log`.
+
+## References 
+
+- <a id="KimBathe2017">Ki-Tae Kim and Klaus-Jürgen Bathe</a>. The Bathe subspace iteration method enriched by
+turning vectors. Computers & Structures, 186:11–21, 2017.
+[`pdf`](http://web.mit.edu/kjb/www/Principal_Publications/The_Bathe%20subspace_iteration_method_enriched_by_turning_vectors.pdf)
+
+- <a id="Bathe2014">Klaus-Jürgen Bathe</a>. Finite Element Procedures. Klaus-Jürgen Bathe, Watertown, MA,
+second edition, 2014. [`link`](http://www.amazon.com/dp/0979004950)
 
 ## License
 
