@@ -25,8 +25,20 @@ are real symmetric sparse matrices (usually obtained
 after discretization like finite elements), and $\delta_{ij}$ is the Kronecker
 delta.
 
-Please see [Kim and Bathe 2017](#KimBathe2017) and [Bathe 2014](#Bathe2014) for a
-detailed description of the enriched subsplace iteration method.
+There are two widely used methods for solving the above eigenvalue problems:
+the Lanczos method ([link](https://en.wikipedia.org/wiki/Lanczos_algorithm))
+and the subspace iteration method ([Bathe 2014](#Bathe2014)).
+While in general the subspace iteration method is slower than the Lanczos
+method, the subspace iteration method is particularly more amenable to parallel
+implementations. 
+The enriched subspace iteration method is a novel extension of the subspace
+iteration method, and the improvement is achieved without deteriorating its
+favorable feature of being suitable to parallel processing.
+
+**A significant speed-up compared to the subspace iteration method can be achieved**.
+Speed-ups observed from some example problems are a factor of 3-5.
+Please see [Kim and Bathe 2017](#KimBathe2017) and [Bathe 2014](#Bathe2014) for
+the detail of the enriched subspace iteration method.
 
 <!-- The generalized eigenvalue problem defined above arises in many application areas. -->
 
