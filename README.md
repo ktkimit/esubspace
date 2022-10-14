@@ -90,7 +90,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE Esspace::Esspace)
 ```
 
 When configuring your project, don't forget to make the installed enriched
-subspace iteration library discoverable by adding its CMake package directory
+subspace iteration library discoverable by adding its installation directory
 to `CMAKE_PREFIX_PATH`.
 
 Please look at the CMake configuration of the example
