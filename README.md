@@ -81,7 +81,7 @@ The CMake files are located in the library directory in the installation
 directory you specified with the installation prefix.
 
 You can find and use the installed enriched subspace iteration library by
-simply put the following in your CMake configuration
+simply putting the following in your CMake configuration
 ```cmake
 find_package(Esspace REQUIRED)
 ...
